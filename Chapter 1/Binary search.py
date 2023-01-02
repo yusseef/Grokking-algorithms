@@ -12,4 +12,4 @@ def binary_search(lst, item):
             low = mid + 1
     return None
 
-#Complexity ==> O(Log(n))
+#Complexity ==> O(log2​(n))
