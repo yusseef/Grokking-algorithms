@@ -1,0 +1,4 @@
+*Binary search is a lot faster than linear search.
+*O(log2(n) is faster than O(n) But it gets a lot faster when n grows.
+*Algorithm speed isn't measure in seconds it measures in operations.
+ 
