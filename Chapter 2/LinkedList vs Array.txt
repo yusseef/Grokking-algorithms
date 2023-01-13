@@ -1,0 +1,28 @@
+*Reading :
+    Arrays ==> O(1) Arrays supports random acces so we can acces any elemnt by one operation.
+    LinkedList ==> O(n) LinkedList is sequential access so we must go all over the list to find the elemnt.
+
+*Insertion and deletion:
+    Arrays ==> O(n) if we insert elemnt at the start cause we will shift  allother elemnts
+               O(1) if we insert element at the end.
+               O(n)if we insert element in the middle.
+    LinkedList ==> O(1) if we insert or delete element in the beginning 
+                   O(n) if we insert ordelete element in the end cause we will go through all the list
+                   O(n)if we insert element in the middle.
+                   P.S : Sometimes it's best practice tokeep tracking both theendand the beginning of linkedlist
+                         so in this case the insertion and deletion in the end will be O(1).
+
+Arrays is commonly used cause its allowing random access
+
+Benefits of linkedlist:
+ 1. Insertion is easier.
+ 2. You don't need to pre-alocate space.
+
+
+****What is Pre-allocation ?
+    We store the data in memory so memory works like that:
+        you givethem the data and it assign it to an empty addres
+        so let's suppose we give it 3 values in array and it assigned them to three next to eeach other addresses.
+        and now we need to add the fourth element but the next memory location is not empty ?
+        now we have to realocate all our data array addresses to another addresses.
+        This is pre-alocation.
