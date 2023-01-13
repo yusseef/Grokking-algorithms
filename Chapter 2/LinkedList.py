@@ -47,11 +47,93 @@ class LinkedList:
     def insert_values(self, data_list):
         for elem in data_list:
             self.insert_at_end(elem)
+        
+        
+        # V2 Methods
+    def get_length(self):
+        count = 0
+
+        itr = self.head
+
+        while itr.next:
+            itr = itr.next
+            count += 1
+        return count
+    
+    def remove(self, index):
+        if index < 0 or index >= self.get_length():
+            return Exception("Nota valid index")
+
+        if index == 0:
+            self.head = self.head.next
+            return
+        
+        count = 0 
+        itr = self.head
+
+        while itr:
+            if count == index - 1:
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+            count += 1  
+
+    def insert_at(self, index, data):
+        if index < 0 or index >= self.get_length():
+            return Exception('Not a valid index')
+
+        if index == 0:
+            node = Node(data, self.head)  
+            self.head = node
+
+        count = 0
+        itr = self.head
+
+        while itr:
+            if count == index - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
+
+    def remove_by_data(self, data):
+        if self.head is None:
+            return Exception("No element in the list")
+
+        if data == self.head.data:
+            self.head = self.head.next
+
+        itr = self.head
+
+        while itr.next:
+            if data == itr.next.data:
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+    def add_after(self, data, data_after):
+        if self.head is None:
+            return Exception("No element in the list")
+
+        if data_after == self.head.data:
+            self.head.next = Node(data, self.head.next)
+
+        itr = self.head
+
+        while itr:
+            if data_after == itr.data:
+                itr.next = Node(data, itr.next)
+                break
+            itr = itr.next
 
 lst = LinkedList()
 lst.insert_at_the_beginning(50)
 lst.insert_at_the_beginning(60)
 lst.insert_at_end(100)
 lst.insert_values([50, 100, 65])
-
+print(lst.get_length())
+lst.remove(2)
+lst.print()
+lst.remove_by_data(65)
+lst.add_after(88, 60)
 lst.print()
